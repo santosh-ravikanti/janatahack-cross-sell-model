@@ -1,0 +1,26 @@
+Step by step approach for using the docker deployment:
+
+-- Make sure model_app, requirements.txt, Dockerfile, model .pkl file into the same folder
+-- Browser to the folder path on command prompt.
+
+Steps involved: Create a local  docker image, login to docker hub repository from command prompt, push the files to the docker hub central repository
+
+Step 1: create an image in the local docker
+
+# use this command to run and create a docker build. last .(dot) is important to pick all the files within this folder
+command: docker build -t janatahack-cross-sell-api-test:1.0 .
+
+step 2: In the command prompt, run the below command to authenticate with docker hub credentials
+command: docker login -u santoshravikanti
+Password:
+
+--> we will receive login succeeded after logging in
+
+step 3: create a new tag name for pushing into docker hub
+command: docker tag janatahack-cross-sell-api-test santoshravikanti/janatahack-cross-sell-api-test:1.0
+
+step 4: push the docker image into the docker hub using the tag created just now
+command: docker push santoshravikanti/janatahack-cross-sell-api-test:1.0
+
+step 5: to check the docker run locally, run this command to run the local image (Not the docker hub one on the cloud)
+command: docker run -p 80:80 janatahack-cross-sell-api-test:1.0
