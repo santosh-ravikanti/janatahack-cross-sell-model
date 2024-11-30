@@ -1,0 +1,11 @@
+Option 1: run locally
+command: streamlit run webview.py
+
+Option 2: run on the cloud
+step1: login to streamlit.io
+step2: create a new repository on the github (public repository)
+step3: On streamlit.io; create app and refer the files from git hub
+step4: map the git repo (with streamlit supported files; webview.py, requirements.txt, .pkl file and train.csv) onto streamlit app
+step5: Deploy on cloud and use the webapp name to access on the cloud
+
+Option 3: Pass multiple values to streamlit using functionality of uploading a csv file and enable download of the predicted inputs.
